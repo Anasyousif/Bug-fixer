@@ -89,19 +89,3 @@ bug_hunter/
 └── sample_buggy_repo/       # demo file with one instance of every bug
 ```
 
-## Path to going live (when you're ready)
-1. Get comfortable with dry-run output on a real repo of yours first.
-2. Get a GitHub PAT (repo scope) and set `GITHUB_TOKEN` env var.
-3. Call `github_pr.push_branch()` then `github_pr.open_pull_request()`
-   after `run_dry_run_pr()` — both are already implemented, just not
-   wired into `main.py`'s CLI yet (intentionally — this is a "flip the
-   switch when you trust it" step, not a technical blocker).
-
-## Ideas to extend this together
-- [ ] Add more rules (e.g. `assert` used for data validation — stripped
-      in `python -O`; shadowing builtins; f-strings without placeholders)
-- [ ] Wire up the real GitHub PR flow (see above)
-- [ ] Add a `--rules` flag to enable/disable specific checks
-- [ ] Run it as a GitHub Action on every PR (auto-comment instead of
-      auto-fix, for cases where you want review-only mode)
-- [ ] Add a config file (`.bughunter.toml`) for per-repo rule tuning
