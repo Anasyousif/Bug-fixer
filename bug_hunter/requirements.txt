@@ -1,0 +1,5 @@
+# Core scan/fix/dry-run functionality uses only the Python standard library
+# (ast, difflib, subprocess, argparse) — nothing to install for that.
+
+# Only needed once you wire up github_pr.py for real PR creation:
+requests>=2.31.0
